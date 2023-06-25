@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 
@@ -8,15 +7,32 @@ public class NetworkPlayerController : NetworkCharacterControllerBase
     private GameObject followCameraPrefab;
 
 
-    public override async void OnOwnerStart()
+    public override void OnOwnerStart()
     {
-        await UniTask.Delay(10 * 1000);
+        base.OnOwnerStart();
+
         var followCameraInst = Instantiate(followCameraPrefab, transform);
     }
 
-    public override void OnUpdate()
+    public override void OnOwnerFixedUpdate()
     {
-        Debug.Log("NetworkPlayerController.OnUpdate");
+        InputVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        animator.SetFloat("Speed", InputVector.z);
+        animator.SetFloat("Direction", InputVector.x);
+
+        Velocity = new Vector3(0, 0, InputVector.z);
+        Velocity = transform.TransformDirection(Velocity);
+        if (InputVector.z > 0.1)
+        {
+            Velocity *= forwardSpeed;
+        }
+        else if (InputVector.z < -0.1)
+        {
+            Velocity *= backwardSpeed;
+        }
+
+        transform.position += Velocity * Time.fixedDeltaTime;
+        transform.Rotate(0, InputVector.x * turnSpeed * Time.fixedDeltaTime, 0);
     }
 
     public class ActionStateBase : GenericNetworkStateMachine.StateBase
