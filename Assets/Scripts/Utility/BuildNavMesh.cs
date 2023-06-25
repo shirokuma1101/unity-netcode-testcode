@@ -1,10 +1,14 @@
 using Unity.AI.Navigation;
 using UnityEngine;
 
-public class BuildNavMesh : MonoBehaviour
+namespace NavigationUtility.Components
 {
-    private void Awake()
+    public class BuildNavMesh : MonoBehaviour
     {
-        GetComponent<NavMeshSurface>().BuildNavMesh();
+        private void Awake()
+        {
+            GetComponent<NavMeshSurface>().BuildNavMesh();
+        }
     }
+
 }

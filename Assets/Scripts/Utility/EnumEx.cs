@@ -1,61 +1,61 @@
 using System;
 using System.Collections.Generic;
 
-public static partial class TupleEnumerable
+namespace Utility.EnumEx
 {
-    public static IEnumerable<(T item, int index)> Indexed<T>(this IEnumerable<T> source)
+    public static class EnumEx
     {
-        if (source == null) throw new ArgumentNullException(nameof(source));
-
-        IEnumerable<(T item, int index)> impl()
+        public static IEnumerable<(T item, int index)> Indexed<T>(this IEnumerable<T> self)
         {
-            var i = 0;
-            foreach (var item in source)
+            if (self == null) throw new ArgumentNullException(nameof(self));
+
+            IEnumerable<(T item, int index)> impl()
             {
-                yield return (item, i);
-                ++i;
+                var i = 0;
+                foreach (var item in self)
+                {
+                    yield return (item, i);
+                    ++i;
+                }
             }
+
+            return impl();
         }
 
-        return impl();
-    }
-}
-
-public class EnumEx
-{
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="U"></typeparam>
-    /// <param name="tflags"></param>
-    /// <param name="uflags"></param>
-    /// <returns></returns>
-    public static bool HasFlag<T, U>(T tflags, U uflags) where T : Enum where U : Enum
-    {
-        if ((Convert.ToInt32(tflags) & Convert.ToInt32(uflags)) != 0)
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="U"></typeparam>
+        /// <param name="tflags"></param>
+        /// <param name="uflags"></param>
+        /// <returns></returns>
+        public static bool HasFlag<T, U>(T tflags, U uflags) where T : Enum where U : Enum
         {
+            if ((Convert.ToInt32(tflags) & Convert.ToInt32(uflags)) != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="U"></typeparam>
+        /// <param name="flags"></param>
+        /// <returns></returns>
+        public static bool MultipleFlagExists<T, U>(U flags) where T : Enum where U : Enum
+        {
+            foreach (T value in Enum.GetValues(typeof(T)))
+            {
+                if (Convert.ToInt32(flags) == Convert.ToInt32(value))
+                {
+                    return false;
+                }
+            }
             return true;
         }
-        return false;
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <typeparam name="U"></typeparam>
-    /// <param name="flags"></param>
-    /// <returns></returns>
-    public static bool MultipleFlagExists<T, U>(U flags) where T : Enum where U : Enum
-    {
-        foreach (T value in Enum.GetValues(typeof(T)))
-        {
-            if (Convert.ToInt32(flags) == Convert.ToInt32(value))
-            {
-                return false;
-            }
-        }
-        return true;
     }
 }
