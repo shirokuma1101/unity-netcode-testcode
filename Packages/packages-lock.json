@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.community.netcode.transport.steamnetworkingsockets": {
-      "version": "https://github.com/heathen-engineering/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.steamnetworkingsockets",
+      "version": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.steamnetworkingsockets",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "629529401afcd5fa42e852489b5c9d3d0e514228"
+      "hash": "d862504b148f6c3a31763797900eb5a54d4625a5"
     },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
