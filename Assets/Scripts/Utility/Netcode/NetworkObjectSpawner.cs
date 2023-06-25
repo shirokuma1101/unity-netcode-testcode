@@ -28,8 +28,6 @@ namespace NetcodeUtility
             {
                 NetworkObject networkObjectInst = Instantiate(networkPrefab, position, rotation);
                 networkObjectInst.Spawn(destroyWithScene);
-                NetworkObjectManager.Instance.RegisterNetworkObject(networkObjectInst.GetComponent<NetworkObjectBase>());
-
                 return networkObjectInst.gameObject;
             }
             else
@@ -54,8 +52,6 @@ namespace NetcodeUtility
             {
                 NetworkObject networkObjectInst = Instantiate(networkPrefab, position, rotation);
                 networkObjectInst.SpawnAsPlayerObject(clientId, destroyWithScene);
-                NetworkObjectManager.Instance.RegisterNetworkObject(networkObjectInst.GetComponent<NetworkObjectBase>());
-
                 return networkObjectInst.gameObject;
             }
             else
@@ -80,8 +76,6 @@ namespace NetcodeUtility
             {
                 NetworkObject networkObjectInst = Instantiate(networkPrefab, position, rotation);
                 networkObjectInst.SpawnAsPlayerObject(clientId, destroyWithScene);
-                NetworkObjectManager.Instance.RegisterNetworkObject(networkObjectInst.GetComponent<NetworkObjectBase>());
-
                 return networkObjectInst.gameObject;
             }
             else
