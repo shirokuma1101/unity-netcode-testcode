@@ -36,7 +36,7 @@ public class SteamLobby : LobbyBase
 
     public override void Setup(bool isApproval)
     {
-        if (SteamManager.Instance.Initialized)
+        if (SteamAPIManager.Instance.Initialized)
         {
             lobbyCreated = CallResult<LobbyCreated_t>.Create(OnCreateLobby);
             gameLobbyJoinRequested = Callback<GameLobbyJoinRequested_t>.Create(OnGameLobbyJoinRequested);
