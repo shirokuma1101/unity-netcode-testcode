@@ -1,8 +1,7 @@
 using Cysharp.Threading.Tasks;
-using System;
+using NGOManager.Utility.Singleton;
 using Unity.Netcode;
 using UnityEngine.SceneManagement;
-using Utility.Singleton;
 
 public class LoadingSceneManager : SingletonPersistent<LoadingSceneManager>
 {

@@ -1,7 +1,7 @@
+using NGOManager.Utility.Singleton;
 using Steamworks;
 using System.Text;
 using UnityEngine;
-using Utility.Singleton;
 
 [DisallowMultipleComponent]
 public class SteamAPIManager : SingletonPersistent<SteamAPIManager>

@@ -1,7 +1,7 @@
+using NGOManager.Utility.Singleton;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
-using Utility.Singleton;
 
 public class DirectLobby : LobbyBase
 {

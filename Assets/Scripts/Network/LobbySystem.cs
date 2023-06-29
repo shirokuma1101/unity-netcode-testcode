@@ -1,11 +1,11 @@
 using Netcode.Transports;
+using NGOManager.Utility.Singleton;
 using RapidGUI;
 using System;
 using Unity.Multiplayer.Tools.NetStatsMonitor;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
-using Utility.Singleton;
 
 public class LobbySystem : Singleton<LobbySystem>
 {

@@ -1,7 +1,7 @@
+using NGOManager.Utility.Singleton;
 using System;
 using UnityEngine;
 using Utility.EnumEx;
-using Utility.Singleton;
 
 public class Bootstrap : SingletonPersistent<Bootstrap>
 {

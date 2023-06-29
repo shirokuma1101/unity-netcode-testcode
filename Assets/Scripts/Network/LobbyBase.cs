@@ -1,10 +1,10 @@
 using Cysharp.Threading.Tasks;
+using NGOManager.Utility.Singleton;
 using System;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using Utility.Singleton;
 
 /// <summary>
 /// An abstract class that summarizes common processing when implementing lobbies

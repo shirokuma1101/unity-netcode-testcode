@@ -1,5 +1,5 @@
+using NGOManager.Utility.Singleton;
 using RapidGUI;
-using Utility.Singleton;
 
 public class DebugGUIManager : SingletonPersistent<DebugGUIManager>
 {

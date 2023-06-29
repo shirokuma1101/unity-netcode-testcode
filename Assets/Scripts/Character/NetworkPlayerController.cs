@@ -1,3 +1,4 @@
+using NGOManager;
 using System;
 using UnityEngine;
 

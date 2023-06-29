@@ -3,6 +3,7 @@
     "com.community.netcode.transport.steamnetworkingsockets": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.steamnetworkingsockets",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.rlabrecque.steamworks.net": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net",
+    "com.shirokuma1101.unityngomanager": "https://github.com/shirokuma1101/unity-ngo-manager.git?path=/unity-ngo-manager",
     "com.unity.ai.navigation": "1.1.4",
     "com.unity.collab-proxy": "2.0.5",
     "com.unity.ide.rider": "3.0.24",

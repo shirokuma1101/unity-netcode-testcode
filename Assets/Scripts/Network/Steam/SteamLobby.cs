@@ -1,10 +1,10 @@
 using Cysharp.Threading.Tasks;
 using Netcode.Transports;
+using NGOManager.Utility.Singleton;
 using Steamworks;
 using System.Text.RegularExpressions;
 using Unity.Netcode;
 using UnityEngine;
-using Utility.Singleton;
 
 /// <summary>
 /// https://partner.steamgames.com/doc/features

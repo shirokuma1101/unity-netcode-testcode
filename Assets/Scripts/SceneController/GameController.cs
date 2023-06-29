@@ -1,4 +1,4 @@
-using NetcodeUtility;
+using NGOManager;
 using Unity.Netcode;
 using UnityEngine;
 

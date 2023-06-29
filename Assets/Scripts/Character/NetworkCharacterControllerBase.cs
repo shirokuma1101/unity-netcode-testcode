@@ -1,3 +1,4 @@
+using NGOManager;
 using UnityEngine;
 
 public class NetworkCharacterControllerBase : NetworkObjectBase
