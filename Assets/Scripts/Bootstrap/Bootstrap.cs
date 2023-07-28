@@ -41,8 +41,13 @@ public class Bootstrap : SingletonPersistent<Bootstrap>
     /// <summary>
     /// Network API Initialization
     /// </summary>
-    public void InitNetworkAPI(int platformsIndex)
+    public void InitializeNetworkAPI(int platformsIndex)
     {
+        if (NetworkManager != null)
+        {
+            throw new Exception("NetworkManager is already initialized!");
+        }
+
         NetworkManager = Instantiate(networkManagerPrefab);
 
         foreach (var (e, i) in ((Platforms[])Enum.GetValues(typeof(Platforms))).Indexed())

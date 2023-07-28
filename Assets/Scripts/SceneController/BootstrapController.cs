@@ -28,7 +28,7 @@ public class BootstrapController : MonoBehaviour
 
     public void GoToTitle()
     {
-        Bootstrap.Instance.InitNetworkAPI(dropdownPlatform.value);
+        Bootstrap.Instance.InitializeNetworkAPI(dropdownPlatform.value);
         LoadingSceneManager.Instance.LoadSceneAsync(LoadingSceneManager.SceneName.Title, LoadSceneMode.Single, false).Forget();
     }
 }

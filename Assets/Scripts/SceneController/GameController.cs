@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using NGOManager;
 using Unity.Netcode;
 using UnityEngine;
@@ -10,6 +11,6 @@ public class GameController : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        NetworkObjectSpawner.SpawnAsPlayerObject(playerPrefab, NetworkManager.Singleton.LocalClientId);
+        NetworkObjectSpawner.SpawnAsPlayerObjectAsync(playerPrefab, NetworkManager.Singleton.LocalClientId).Forget();
     }
 }
