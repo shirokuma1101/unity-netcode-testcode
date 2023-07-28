@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 /// Since MonoBehaviour is inherited, it can be inherited as it is.
 /// </summary>
 [Serializable]
-public abstract class LobbyBase : SingletonNetworkPersistent<LobbySystem>
+public abstract class LobbyBase : SingletonNetworkPersistent<LobbyBase>
 {
     [Serializable]
     public struct Payloads
